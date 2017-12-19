@@ -1,0 +1,22 @@
+<div id = "wrapper">
+  <pre  *ngIf = "error" id = "side-nav">This is the error:
+    <ul>
+      <li *ngFor = "let key of errorblock" >{{key}} </li> </ul>
+    </pre>
+  <div id="content-wrapper" >
+  <div class="row">
+    <div class="col-sm-6" id = "json1"  >
+      <textarea placeholder="Enter First Json" *ngIf = "!showjson" rows = "10" cols="50" [(ngModel)] = "JsonInput1"  name="jsoninput1" ></textarea>
+      <pre  *ngIf = "showjson" >{{JsonInput1 | jsonpretty}} </pre>
+    </div>
+    <div class="col-sm-6" id= "json2">
+      <textarea placeholder="Enter Second Json" *ngIf = "!showjson"  rows = "10" cols="50" [(ngModel)] = "JsonInput2" name="jsoninput2" ></textarea>
+      <pre  *ngIf = "showjson">{{JsonInput2 | jsonpretty}} </pre>
+    </div>
+  </div>
+</div>
+  <button style="margin-left: 30%" *ngIf = "!showjson" (click) = "ShowJson()" >Compare Json</button>
+
+  <button style="margin-left: 30%" (click) = "newInputs()" *ngIf = "showjson" >New Json Inputs</button>
+
+</div>
