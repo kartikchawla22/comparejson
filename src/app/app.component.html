@@ -1,8 +1,8 @@
 <div id = "wrapper">
-  <pre  *ngIf = "error" id = "side-nav">This is the error:
+  <div  *ngIf = "error" id = "side-nav">This is the error:
     <ul>
-      <li *ngFor = "let key of errorblock" >{{key}} </li> </ul>
-    </pre>
+      <pre><li *ngFor = "let key of errorblock" >{{key}} </li></pre> </ul>
+    </div>
   <div id="content-wrapper" >
   <div class="row">
     <div class="col-sm-6" id = "json1"  >
